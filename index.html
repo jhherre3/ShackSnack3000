@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,12 +43,27 @@
             padding: 60px 20px;
             text-align: center;
         }
-        .snack-category {
-            margin-bottom: 40px;
+        .snack-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            cursor: pointer;
         }
-        .snack-category h3 {
-            margin-bottom: 20px;
+        .snack-tab {
+            color: #ccc;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .snack-tab.active {
             color: #f8b400;
+            text-decoration: underline;
+        }
+        .snack-category {
+            display: none;
+        }
+        .snack-category.active {
+            display: block;
         }
         .snack-grid {
             display: flex;
@@ -69,6 +84,17 @@
             margin-bottom: 10px;
         }
     </style>
+    <script>
+        function showCategory(categoryId) {
+            const categories = document.querySelectorAll('.snack-category');
+            categories.forEach(cat => cat.classList.remove('active'));
+            document.getElementById(categoryId).classList.add('active');
+
+            const tabs = document.querySelectorAll('.snack-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(`tab-${categoryId}`).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <header class="bg-dark text-white text-center py-5">
@@ -115,44 +141,46 @@
         <h2>Snack Selection</h2>
         <p>Choose your favorites or request new ones in the contact form!</p>
 
-        <div class="snack-category">
-            <h3>Classics</h3>
+        <div class="snack-tabs">
+            <div id="tab-classics" class="snack-tab active" onclick="showCategory('classics')">Classics</div>
+            <div id="tab-health" class="snack-tab" onclick="showCategory('health')">Health Nut</div>
+            <div id="tab-refreshers" class="snack-tab" onclick="showCategory('refreshers')">Refreshers</div>
+            <div id="tab-market" class="snack-tab" onclick="showCategory('market')">Market Minis</div>
+        </div>
+
+        <div id="classics" class="snack-category active">
             <div class="snack-grid">
-                <div class="snack-item"><img src="assets/images/doritos.png" alt="Doritos">Doritos</div>
-                <div class="snack-item"><img src="assets/images/cheetos.png" alt="Cheetos">Cheetos</div>
-                <div class="snack-item"><img src="assets/images/starburst.png" alt="Starburst">Starburst</div>
-                <div class="snack-item"><img src="assets/images/snicker.png" alt="Snickers">Snickers</div>
+                <div class="snack-item"><img src="images/doritos.png" alt="Doritos">Doritos</div>
+                <div class="snack-item"><img src="images/cheetos.png" alt="Cheetos">Cheetos</div>
+                <div class="snack-item"><img src="images/starburst.png" alt="Starburst">Starburst</div>
+                <div class="snack-item"><img src="images/snicker.png" alt="Snickers">Snickers</div>
             </div>
         </div>
 
-        <div class="snack-category">
-            <h3>Health Nut</h3>
+        <div id="health" class="snack-category">
             <div class="snack-grid">
-                <div class="snack-item"><img src="assets/images/nuts.png" alt="Mixed Nuts">Mixed Nuts</div>
-                <div class="snack-item"><img src="assets/images/proteinbar.png" alt="Protein Bar">Protein Bar</div>
-                <div class="snack-item"><img src="assets/images/joyride.png" alt="Joyride">Joyride</div>
-                <div class="snack-item"><img src="assets/images/fruit.png" alt="Fruit Snacks">Fruit Snacks</div>
+                <div class="snack-item"><img src="images/nuts.png" alt="Mixed Nuts">Mixed Nuts</div>
+                <div class="snack-item"><img src="images/proteinbar.png" alt="Protein Bar">Protein Bar</div>
+                <div class="snack-item"><img src="images/joyride.png" alt="Joyride">Joyride</div>
+                <div class="snack-item"><img src="images/fruit.png" alt="Fruit Snacks">Fruit Snacks</div>
             </div>
         </div>
 
-        <div class="snack-category">
-            <h3>Refreshers</h3>
+        <div id="refreshers" class="snack-category">
             <div class="snack-grid">
-                <div class="snack-item"><img src="assets/images/redbull.png" alt="Red Bull">Red Bull</div>
-                <div class="snack-item"><img src="assets/images/olipop.png" alt="Olipop">Olipop</div>
-                <div class="snack-item"><img src="assets/images/water.png" alt="Water">Water</div>
-                <div class="snack-item"><img src="assets/images/icedtea.png" alt="Iced Tea">Iced Tea</div>
+                <div class="snack-item"><img src="images/redbull.png" alt="Red Bull">Red Bull</div>
+                <div class="snack-item"><img src="images/olipop.png" alt="Olipop">Olipop</div>
+                <div class="snack-item"><img src="images/water.png" alt="Water">Water</div>
+                <div class="snack-item"><img src="images/icedtea.png" alt="Iced Tea">Iced Tea</div>
             </div>
         </div>
 
-        
-        <div class="snack-category">
-            <h3>Market Minis</h3>
+        <div id="market" class="snack-category">
             <div class="snack-grid">
-                <div class="snack-item"><img src="assets/images/ramen.png" alt="Noodles">Noodles</div>
-                <div class="snack-item"><img src="assets/images/poptarts.png" alt="Pop Tarts">Pop Tarts</div>
-                <div class="snack-item"><img src="assets/images/cannedfood.png" alt="Canned Food">Canned Food</div>
-                <div class="snack-item"><img src="assets/images/popcorn.png" alt="Popcorn">Popcorn</div>
+                <div class="snack-item"><img src="images/ramen.png" alt="Noodles">Noodles</div>
+                <div class="snack-item"><img src="images/poptarts.png" alt="Pop Tarts">Pop Tarts</div>
+                <div class="snack-item"><img src="images/cannedfood.png" alt="Canned Food">Canned Food</div>
+                <div class="snack-item"><img src="images/popcorn.png" alt="Popcorn">Popcorn</div>
             </div>
         </div>
     </section>
