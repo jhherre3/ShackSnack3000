@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,11 +33,40 @@
             padding: 30px;
             margin: 10px;
         }
+        .step-box img {
+            height: 150px;
+            object-fit: contain;
+        }
         .snack-options {
             background: #2c2c3e;
             color: white;
             padding: 60px 20px;
             text-align: center;
+        }
+        .snack-category {
+            margin-bottom: 40px;
+        }
+        .snack-category h3 {
+            margin-bottom: 20px;
+            color: #f8b400;
+        }
+        .snack-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .snack-item {
+            background: #1e1e2f;
+            padding: 20px;
+            border-radius: 10px;
+            width: 150px;
+        }
+        .snack-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -48,32 +77,32 @@
     </header>
 
     <section class="showcase">
-        <img src="images/shacksnack3000conceptart.png" alt="AI Vending Machine Preview">
+        <img src="assets/images/shacksnack3000conceptart.png" alt="AI Vending Machine Preview">
         <h2>AI-Powered Vending Has Arrived</h2>
         <p>Meet <strong>The Shack Snack 3000</strong> — a smart vending machine powered by real-time vision AI and lightning-fast checkout. Perfect for offices, gyms, schools, or any high-traffic location.</p>
     </section>
 
     <section class="steps-section">
-        <h2><span style="color:#000">3 <span style="color:#007bff">easy steps</span> to take your vending business to the <span style="color:#007bff">next level!</span></span></h2>
+        <h2><span style="color:#000">3 <span style="color:#6e3bd4">easy steps</span> to take your vending business to the <span style="color:#6e3bd4">next level!</span></span></h2>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-4">
                     <div class="step-box">
-                        <img src="images/tapimage.png" alt="Tap" class="img-fluid mb-3">
+                        <img src="assets/images/tapimage.png" alt="Tap" class="img-fluid mb-3">
                         <h4><strong>1. TAP</strong></h4>
                         <p>Tap your credit card or phone to unlock the vending machine door</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="step-box">
-                        <img src="images/grabimage.png" alt="Grab" class="img-fluid mb-3">
+                        <img src="assets/images/grabimage.png" alt="Grab" class="img-fluid mb-3">
                         <h4><strong>2. GRAB</strong></h4>
                         <p>Grab <em>anything</em> you want with your own two hands - no buttons necessary!</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="step-box">
-                        <img src="images/goimage.png" alt="Go" class="img-fluid mb-3">
+                        <img src="assets/images/goimage.png" alt="Go" class="img-fluid mb-3">
                         <h4><strong>3. GO!</strong></h4>
                         <p>Shut the door and your card will be charged accordingly</p>
                     </div>
@@ -83,18 +112,43 @@
     </section>
 
     <section class="snack-options">
-        <h2>Snack Variety</h2>
-        <p>From refreshing drinks to sweet and savory snacks, The Shack Snack 3000 offers a wide variety of options including:</p>
-        <ul class="list-unstyled">
-            <li>• Chips (Lay’s, Doritos, Ruffles, Cheetos)</li>
-            <li>• Beverages (Coca-Cola, Sprite, Dr Pepper, Flavored Water)</li>
-            <li>• Sweets (Candy bars, Gummies, Cookies)</li>
-            <li>• Healthy Picks (Protein Bars, Trail Mix, Fruit Snacks)</li>
-        </ul>
+        <h2>Snack Selection</h2>
+        <p>Choose your favorites or request new ones in the contact form!</p>
+
+        <div class="snack-category">
+            <h3>Classics</h3>
+            <div class="snack-grid">
+                <div class="snack-item"><img src="assets/images/doritos.png" alt="Doritos">Doritos</div>
+                <div class="snack-item"><img src="assets/images/cheetos.png" alt="Cheetos">Cheetos</div>
+                <div class="snack-item"><img src="assets/images/starburst.png" alt="Starburst">Starburst</div>
+                <div class="snack-item"><img src="assets/images/snicker.png" alt="Snickers">Snickers</div>
+            </div>
+        </div>
+
+        <div class="snack-category">
+            <h3>Health Nut</h3>
+            <div class="snack-grid">
+                <div class="snack-item"><img src="assets/images/nuts.png" alt="Mixed Nuts">Mixed Nuts</div>
+                <div class="snack-item"><img src="assets/images/proteinbar.png" alt="Protein Bar">Protein Bar</div>
+                <div class="snack-item"><img src="assets/images/joyride.png" alt="Joyride">Joyride</div>
+                <div class="snack-item"><img src="assets/images/fruit.png" alt="Fruit Snacks">Fruit Snacks</div>
+            </div>
+        </div>
+
+        <div class="snack-category">
+            <h3>Market Minis</h3>
+            <div class="snack-grid">
+                <div class="snack-item"><img src="assets/images/ramen.png" alt="Noodles">Noodles</div>
+                <div class="snack-item"><img src="assets/images/poptarts.png" alt="Pop Tarts">Pop Tarts</div>
+                <div class="snack-item"><img src="assets/images/cannedfood.png" alt="Canned Food">Canned Food</div>
+                <div class="snack-item"><img src="assets/images/popcorn.png" alt="Popcorn">Popcorn</div>
+            </div>
+        </div>
     </section>
 
     <section class="container my-5">
         <h2>Contact Us</h2>
+        <p>Let us know what snacks you'd like to see in your Shack Snack 3000!</p>
         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
@@ -105,7 +159,7 @@
                 <input type="email" class="form-control" id="email" name="_replyto" required>
             </div>
             <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
+                <label for="message" class="form-label">Message / Snack Requests</label>
                 <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Inquiry</button>
